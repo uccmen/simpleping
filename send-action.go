@@ -12,7 +12,7 @@ import (
 	"github.com/stvp/rollbar"
 )
 
-func sendAction(w http.ResponseWriter, recipientID string, action string) error {
+func sendAction(recipientID string, action string) error {
 	var err error
 	if recipientID == "" {
 		err = fmt.Errorf("recipientId is required")
@@ -34,7 +34,7 @@ func sendAction(w http.ResponseWriter, recipientID string, action string) error 
 		return err
 	}
 
-	req, err := http.NewRequest("POST", os.Getenv("FB_MESSENGER_URL"), bytes.NewBuffer(bodyB))
+	req, err := http.NewRequest("POST", os.Getenv("FB_GRAPH_API_URL")+"/messages", bytes.NewBuffer(bodyB))
 	if err != nil {
 		rollbar.Error(rollbar.ERR, err)
 		return err

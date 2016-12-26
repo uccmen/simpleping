@@ -99,3 +99,14 @@ type Payload struct {
 	Url          string     `json:"url,omitempty"`
 	StickerID    *big.Int   `json:"sticker_id,omitempty"`
 }
+
+// Get Started Button initialization
+type GetStartedTemplate struct {
+	SettingType   string `json:"setting_type,omitempty"`
+	ThreadState   string `json:"thread_state,omitempty"`
+	CallToActions []CTA  `json:"call_to_actions,omitempty"`
+}
+
+type CTA struct {
+	Payload string `json:"payload,omitempty"`
+}

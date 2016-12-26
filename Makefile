@@ -6,7 +6,7 @@ deps:
 	go get github.com/bugsnag/bugsnag-go
 
 bin/simpleping: *.go
-	$(GO_BUILD_ENV) go build -v -o $@ $^
+	$(GO_BUILD_ENV) go build -race -v -o $@ $^
 
 bin/simpleping-mac: *.go
 	go build -race -v -o $@ $^

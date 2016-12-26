@@ -2,7 +2,7 @@ FROM gliderlabs/alpine:latest
 
 MAINTAINER Ucchishta Sivaguru <ucc.men@gmail.com>
 
-RUN apk-install git make py-pip go && pip install awscli
+RUN apk-install git make tzdata go
 
 RUN mkdir -p /opt/go && \
     mkdir -p /home/app && \
