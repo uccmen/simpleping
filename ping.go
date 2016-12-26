@@ -15,7 +15,7 @@ func pingUrl(url string) {
 		return
 	}
 	if resp.StatusCode != http.StatusOK {
-		err = fmt.Errorf("ping for %s returned %d - %s", url, resp.StatusCode, resp.Status)
+		err = fmt.Errorf("ping for %s returned %s :(", url, resp.Status)
 		for _, subscriber := range subcribers {
 			message := Message{}
 			message.MessageData.Text = err.Error()
@@ -27,5 +27,6 @@ func pingUrl(url string) {
 	}
 
 	//DEBUG
+	log.Printf("SUBSCRIBERS: %v", subcribers)
 	log.Println(fmt.Sprintf("ping for %s returned %d - %s", url, resp.StatusCode, resp.Status))
 }
