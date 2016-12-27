@@ -31,7 +31,7 @@ func init() {
 	if os.Getenv("FB_GRAPH_API_URL") == "" {
 		log.Panicln("FB_GRAPH_API_URL not set")
 	}
-	if os.Getenv("TIMEZONE") == "" {
+	if os.Getenv("TIMEZONE") == "" { //IANA Time Zone e.g. "America/New_York"
 		log.Panicln("TIMEZONE not set")
 	}
 	if os.Getenv("PING_CRON_EXPRESSION") == "" {
