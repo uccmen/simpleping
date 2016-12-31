@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"net/http"
-	"time"
 
 	"github.com/stvp/rollbar"
 )
@@ -40,13 +39,13 @@ func dailyUpdatePing(url string) {
 		message.Sender.ID = subscriber
 
 		if resp.StatusCode != http.StatusOK {
-			err = fmt.Errorf("daily update: %v ping for %s is unhealthy today - %s :(", time.Now().String(), url, resp.Status)
+			err = fmt.Errorf("daily update: ping for %s is unhealthy today - %s :(", url, resp.Status)
 			rollbar.Error(rollbar.ERR, err)
 			message.MessageData.Text = err.Error()
 		}
 
 		if resp.StatusCode == http.StatusOK {
-			message.MessageData.Text = fmt.Sprintf("daily update: %v ping for %s is looking healthy today!", time.Now().String(), url)
+			message.MessageData.Text = fmt.Sprintf("daily update: ping for %s is looking healthy today!", url)
 		}
 
 		handleOutgoing(message)
