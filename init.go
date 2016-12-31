@@ -64,6 +64,7 @@ func init() {
 	}
 
 	redisInstance = redisutil.NewRedis()
+	log.Println(redisInstance.DB().Get())
 
 	go schedulePing()
 }
