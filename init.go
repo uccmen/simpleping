@@ -36,8 +36,14 @@ func init() {
 	if os.Getenv("TIMEZONE") == "" { //IANA Time Zone e.g. "America/New_York"
 		log.Panicln("TIMEZONE not set")
 	}
-	if os.Getenv("PING_CRON_EXPRESSION") == "" {
-		log.Panicln("PING_CRON_EXPRESSION not set")
+	if os.Getenv("PING_CRON_EXP") == "" {
+		log.Panicln("PING_CRON_EXP not set")
+	}
+	if os.Getenv("PING_CRON_DAILY_EXP") == "" {
+		err = os.Setenv("PING_CRON_DAILY_EXP", "0 0 10 * * *")
+		if err != nil {
+			log.Panicln(err)
+		}
 	}
 	if os.Getenv("URL_TO_PING") == "" {
 		log.Panicln("URL_TO_PING not set")
@@ -76,7 +82,7 @@ func init() {
 
 func schedulePing() {
 	pingCron = cron.NewWithLocation(location)
-	pingCron.AddFunc(os.Getenv("PING_CRON_EXPRESSION"), func() { pingURL(os.Getenv("URL_TO_PING")) })
-	pingCron.AddFunc("0 09 20 * * *", func() { dailyUpdatePing(os.Getenv("URL_TO_PING")) }) // daily at 10 a.m local time
+	pingCron.AddFunc(os.Getenv("PING_CRON_EXP"), func() { pingURL(os.Getenv("URL_TO_PING")) })
+	pingCron.AddFunc(os.Getenv("PING_CRON_DAILY_EXP"), func() { dailyUpdatePing(os.Getenv("URL_TO_PING")) }) // daily at 10 a.m local time
 	pingCron.Start()
 }
