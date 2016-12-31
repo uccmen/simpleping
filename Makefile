@@ -3,7 +3,8 @@ GO_BUILD_ENV := GOOS=linux GOARCH=amd64
 default: buildmac
 
 deps:
-	go get github.com/bugsnag/bugsnag-go
+	go get github.com/stvp/rollbar
+	go get github.com/robfig/cron
 
 bin/simpleping: *.go
 	$(GO_BUILD_ENV) go build -race -v -o $@ $^
