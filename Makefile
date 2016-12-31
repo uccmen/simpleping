@@ -38,3 +38,4 @@ run: build init
 
 heroku: bin/simpleping
 	heroku container:push web
+
