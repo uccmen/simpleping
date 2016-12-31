@@ -27,10 +27,10 @@
 			"revisionTime": "2016-05-27T21:11:11Z"
 		},
 		{
-			"checksumSHA1": "yHXJXw4sHwNQOEKYdMj3wUkKz0A=",
+			"checksumSHA1": "tWhmQr/XMWobc6SMCthE6zBBRzg=",
 			"path": "github.com/uccmen/redisutil",
-			"revision": "39015e4f32289b8f8c7a797a558c495669df4a9d",
-			"revisionTime": "2016-12-31T06:54:09Z"
+			"revision": "ec77967507f3ade813b17c7e0872712af33319db",
+			"revisionTime": "2016-12-31T07:38:12Z"
 		}
 	],
 	"rootPath": "github.com/uccmen/simpleping"
