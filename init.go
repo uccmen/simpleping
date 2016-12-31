@@ -66,6 +66,6 @@ func init() {
 
 func schedulePing() {
 	pingCron = cron.New()
-	pingCron.AddFunc(os.Getenv("PING_CRON_EXPRESSION"), func() { pingUrl(os.Getenv("URL_TO_PING")) })
+	pingCron.AddFunc(os.Getenv("PING_CRON_EXPRESSION"), func() { pingURL(os.Getenv("URL_TO_PING")) })
 	pingCron.Start()
 }

@@ -15,7 +15,10 @@ build: bin/simpleping
 
 buildmac: bin/simpleping-mac
 
-runnotify: buildmac
+lint: *.go
+	golint
+
+runnotify: lint buildmac
 	-killall simpleping-mac
 	-terminal-notifier -title "simpleping" -message "Built and running!" -remove
 	bin/simpleping-mac
