@@ -66,6 +66,11 @@ func init() {
 	redisInstance = redisutil.NewRedis()
 	log.Println(redisInstance.DB().Get())
 
+	err = getSubscribers()
+	if err != nil {
+		log.Println(err)
+	}
+
 	go schedulePing()
 }
 

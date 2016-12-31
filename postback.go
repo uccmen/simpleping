@@ -39,7 +39,10 @@ func getSubscribers() error {
 		rollbar.Error(rollbar.ERR, err)
 		return err
 	}
-	log.Println(res)
+	reply := res.([]interface{})
+	for _, data := range reply {
+		log.Println(string(data.([]byte)))
+	}
 
 	return nil
 }
