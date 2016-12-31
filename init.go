@@ -64,11 +64,11 @@ func init() {
 	}
 
 	redisInstance = redisutil.NewRedis()
-	log.Println(redisInstance.DB().Get())
 
-	err = getSubscribers()
+	subcribers, err = getSubscribers()
 	if err != nil {
-		log.Println(err)
+		rollbar.Error(rollbar.ERR, err)
+		return
 	}
 
 	go schedulePing()
