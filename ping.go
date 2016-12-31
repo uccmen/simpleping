@@ -26,6 +26,13 @@ func pingURL(url string) {
 		return
 	}
 
+	for _, subscriber := range subcribers {
+		message := Message{}
+		message.MessageData.Text = fmt.Sprintf("ping for %s returned %s", url, resp.Status)
+		message.Sender.ID = subscriber
+		handleOutgoing(message)
+	}
+
 	//DEBUG
 	log.Printf("SUBSCRIBERS: %v", subcribers)
 	log.Println(fmt.Sprintf("ping for %s returned %d - %s", url, resp.StatusCode, resp.Status))
