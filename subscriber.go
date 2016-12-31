@@ -26,9 +26,9 @@ func getSubscribers() ([]string, error) {
 		rollbar.Error(rollbar.ERR, err)
 		return []string{}, err
 	}
-	reply := res.([]interface{})
-	for _, data := range reply {
-		subcribers = append(subcribers, string(data.([]byte)))
+	rawData := res.([]interface{})
+	for _, rawSubscriber := range rawData {
+		subcribers = append(subcribers, string(rawSubscriber.([]byte)))
 	}
 
 	return subcribers, nil
