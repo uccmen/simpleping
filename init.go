@@ -8,11 +8,13 @@ import (
 
 	"github.com/robfig/cron"
 	"github.com/stvp/rollbar"
+	"github.com/uccmen/redisutil"
 )
 
 var subcribers []string
 var location *time.Location
 var pingCron *cron.Cron
+var redisInstance *redisutil.RedisInstance
 
 func init() {
 	var err error
@@ -60,6 +62,8 @@ func init() {
 		rollbar.Error(rollbar.ERR, err)
 		return
 	}
+
+	redisInstance = redisutil.NewRedis()
 
 	go schedulePing()
 }
