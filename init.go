@@ -75,7 +75,8 @@ func init() {
 }
 
 func schedulePing() {
-	pingCron = cron.New()
+	pingCron = cron.NewWithLocation(location)
 	pingCron.AddFunc(os.Getenv("PING_CRON_EXPRESSION"), func() { pingURL(os.Getenv("URL_TO_PING")) })
+	pingCron.AddFunc("0 40 19 1/1 * ? *", func() { dailyUpdatePing(os.Getenv("URL_TO_PING")) }) // daily at 10 a.m local time
 	pingCron.Start()
 }
