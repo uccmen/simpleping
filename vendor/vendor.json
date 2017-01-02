@@ -38,22 +38,22 @@
 			"revisionTime": "2016-12-31T07:38:12Z"
 		},
 		{
-			"checksumSHA1": "2Z8VYofHb9K89eWThsf0GYyy/F8=",
+			"checksumSHA1": "ePmcUd/YE2NHa4Qq3btSFxeaKbw=",
 			"path": "github.com/uccmen/simpleping",
-			"revision": "281284017a9e04cc75872e1615e1f1a98e54984a",
-			"revisionTime": "2017-01-02T09:35:12Z"
+			"revision": "97675ad8ff22e9c38189ff125a92d4641599b8f7",
+			"revisionTime": "2017-01-02T09:42:45Z"
 		},
 		{
 			"checksumSHA1": "A9FMZMKPGHNS/4Ijv1oa0sJuD7k=",
 			"path": "github.com/uccmen/simpleping/cmd/scheduleping",
-			"revision": "281284017a9e04cc75872e1615e1f1a98e54984a",
-			"revisionTime": "2017-01-02T09:35:12Z"
+			"revision": "97675ad8ff22e9c38189ff125a92d4641599b8f7",
+			"revisionTime": "2017-01-02T09:42:45Z"
 		},
 		{
 			"checksumSHA1": "HusgIq7xNidqhNWj6ug2fuGdzAI=",
 			"path": "github.com/uccmen/simpleping/cmd/simpleping",
-			"revision": "281284017a9e04cc75872e1615e1f1a98e54984a",
-			"revisionTime": "2017-01-02T09:35:12Z"
+			"revision": "97675ad8ff22e9c38189ff125a92d4641599b8f7",
+			"revisionTime": "2017-01-02T09:42:45Z"
 		},
 		{
 			"path": "github.com/uccmen/simpleping/scheduleping",
