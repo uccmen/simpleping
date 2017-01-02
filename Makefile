@@ -42,6 +42,11 @@ test:
 run: build init
 	bin/simpleping
 
-heroku: bin/simpleping bin/scheduleping
+heroku: heroku-simpleping heroku-scheduleping
+
+heroku-simpleping: bin/scheduleping
 	heroku container:push web
+
+heroku-scheduleping: bin/scheduleping
+	heroku container:push scheduleping
 
