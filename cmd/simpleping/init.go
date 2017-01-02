@@ -9,6 +9,8 @@ import (
 	"github.com/robfig/cron"
 	"github.com/stvp/rollbar"
 	"github.com/uccmen/redisutil"
+
+	sp "github.com/uccmen/simpleping"
 )
 
 var subcribers []string
@@ -63,7 +65,7 @@ func init() {
 	rollbar.Token = os.Getenv("ROLLBAR_TOKEN")
 	rollbar.Environment = os.Getenv("RELEASE_STAGE") // defaults to "development"
 
-	err = initializeGetStartedButton()
+	err = sp.InitializeGetStartedButton()
 	if err != nil {
 		rollbar.Error(rollbar.ERR, err)
 		return
@@ -71,16 +73,16 @@ func init() {
 
 	redisInstance = redisutil.NewRedis()
 
-	subcribers, err = getSubscribers()
+	subcribers, err = sp.GetSubscribers()
 	if err != nil {
 		rollbar.Error(rollbar.ERR, err)
 		return
 	}
 }
 
-func schedulePing() {
-	pingCron = cron.NewWithLocation(location)
-	pingCron.AddFunc(os.Getenv("PING_CRON_EXP"), func() { pingURL(os.Getenv("URL_TO_PING")) })
-	pingCron.AddFunc(os.Getenv("PING_CRON_DAILY_EXP"), func() { dailyUpdatePing(os.Getenv("URL_TO_PING")) }) // daily at 10 a.m local time
-	pingCron.Start()
-}
+// func schedulePing() {
+// 	pingCron = cron.NewWithLocation(location)
+// 	pingCron.AddFunc(os.Getenv("PING_CRON_EXP"), func() { pingURL(os.Getenv("URL_TO_PING")) })
+// 	pingCron.AddFunc(os.Getenv("PING_CRON_DAILY_EXP"), func() { dailyUpdatePing(os.Getenv("URL_TO_PING")) }) // daily at 10 a.m local time
+// 	pingCron.Start()
+// }

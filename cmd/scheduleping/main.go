@@ -1,7 +1,13 @@
 package main
 
-import "log"
+import (
+	"os"
+
+	sp "github.com/uccmen/simpleping"
+)
 
 func main() {
-	log.Println("running by scheduleping")
+	if len(os.Args) >= 2 && os.Args[1] == "daily" {
+		sp.DailyUpdatePing(os.Getenv("URL_TO_PING"))
+	}
 }

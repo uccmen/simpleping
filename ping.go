@@ -7,7 +7,7 @@ import (
 	"github.com/stvp/rollbar"
 )
 
-func pingURL(url string) {
+func PingURL(url string) {
 	resp, err := http.Get(url)
 	if err != nil {
 		rollbar.Error(rollbar.ERR, err)
@@ -27,7 +27,7 @@ func pingURL(url string) {
 	}
 }
 
-func dailyUpdatePing(url string) {
+func DailyUpdatePing(url string) {
 	resp, err := http.Get(url)
 	if err != nil {
 		rollbar.Error(rollbar.ERR, err)

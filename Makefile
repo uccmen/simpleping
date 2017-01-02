@@ -6,13 +6,13 @@ deps:
 	go get github.com/stvp/rollbar
 	go get github.com/robfig/cron
 
-bin/simpleping: *.go
+bin/simpleping: cmd/simpleping/*.go
 	$(GO_BUILD_ENV) go build -race -v -o $@ $^
 
 bin/scheduleping: cmd/scheduleping/*.go
 	$(GO_BUILD_ENV) go build -race -v -o $@ $^
 
-bin/simpleping-mac: *.go
+bin/simpleping-mac: cmd/simpleping/*.go
 	go build -race -v -o $@ $^
 
 bin/scheduleping-mac: cmd/scheduleping/*.go
