@@ -40,20 +40,20 @@
 		{
 			"checksumSHA1": "2Z8VYofHb9K89eWThsf0GYyy/F8=",
 			"path": "github.com/uccmen/simpleping",
-			"revision": "16d9b196d0b49498bb12b73fffcf21dc6ee2f4a0",
-			"revisionTime": "2017-01-02T09:34:34Z"
+			"revision": "281284017a9e04cc75872e1615e1f1a98e54984a",
+			"revisionTime": "2017-01-02T09:35:12Z"
 		},
 		{
 			"checksumSHA1": "A9FMZMKPGHNS/4Ijv1oa0sJuD7k=",
 			"path": "github.com/uccmen/simpleping/cmd/scheduleping",
-			"revision": "ef0ec8d42e452b24aa6430cabb39f4b6c5f22fa3",
-			"revisionTime": "2017-01-02T09:26:54Z"
+			"revision": "281284017a9e04cc75872e1615e1f1a98e54984a",
+			"revisionTime": "2017-01-02T09:35:12Z"
 		},
 		{
 			"checksumSHA1": "HusgIq7xNidqhNWj6ug2fuGdzAI=",
 			"path": "github.com/uccmen/simpleping/cmd/simpleping",
-			"revision": "ef0ec8d42e452b24aa6430cabb39f4b6c5f22fa3",
-			"revisionTime": "2017-01-02T09:26:54Z"
+			"revision": "281284017a9e04cc75872e1615e1f1a98e54984a",
+			"revisionTime": "2017-01-02T09:35:12Z"
 		},
 		{
 			"path": "github.com/uccmen/simpleping/scheduleping",
