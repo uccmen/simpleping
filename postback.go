@@ -1,4 +1,4 @@
-package main
+package simpleping
 
 func handlePostback(message Message) {
 	switch message.Postback.Payload {

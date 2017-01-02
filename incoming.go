@@ -1,4 +1,4 @@
-package main
+package simpleping
 
 import (
 	"encoding/json"
