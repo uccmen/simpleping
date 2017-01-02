@@ -33,16 +33,16 @@
 			"revisionTime": "2016-12-31T07:38:12Z"
 		},
 		{
-			"checksumSHA1": "8Hmo0jAjYcNb9sk4O1c/rSAqh38=",
+			"checksumSHA1": "VHyZkiiMS8VoW0J8xwIhiZEeNxs=",
 			"path": "github.com/uccmen/simpleping",
-			"revision": "92a7838454aef2ee0e8dc10d3f1fb8dfb4ee0e4a",
-			"revisionTime": "2017-01-02T03:43:43Z"
+			"revision": "637d5d75321936b75a566c04260e5dc527c7dcd4",
+			"revisionTime": "2017-01-02T07:58:35Z"
 		},
 		{
 			"checksumSHA1": "TFsg54SR68qpMlAbp6ZoaUU00qs=",
 			"path": "github.com/uccmen/simpleping/cmd/scheduleping",
-			"revision": "92a7838454aef2ee0e8dc10d3f1fb8dfb4ee0e4a",
-			"revisionTime": "2017-01-02T03:43:43Z"
+			"revision": "637d5d75321936b75a566c04260e5dc527c7dcd4",
+			"revisionTime": "2017-01-02T07:58:35Z"
 		},
 		{
 			"path": "github.com/uccmen/simpleping/scheduleping",
