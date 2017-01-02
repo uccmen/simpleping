@@ -76,12 +76,11 @@ func init() {
 		rollbar.Error(rollbar.ERR, err)
 		return
 	}
-
-	go schedulePing()
 }
 
 func schedulePing() {
 	pingCron = cron.NewWithLocation(location)
+	pingCron.AddFunc("@every 5s", func() { log.Println("log every 5s") })
 	pingCron.AddFunc(os.Getenv("PING_CRON_EXP"), func() { pingURL(os.Getenv("URL_TO_PING")) })
 	pingCron.AddFunc(os.Getenv("PING_CRON_DAILY_EXP"), func() { dailyUpdatePing(os.Getenv("URL_TO_PING")) }) // daily at 10 a.m local time
 	pingCron.Start()

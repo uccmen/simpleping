@@ -9,6 +9,10 @@ import (
 )
 
 func main() {
+	if len(os.Args) >= 2 && os.Args[1] == "scheduleping" {
+		go schedulePing()
+		return
+	}
 	http.HandleFunc("/health", healthCheck)
 	http.HandleFunc("/webhook", fbWebhook)
 
