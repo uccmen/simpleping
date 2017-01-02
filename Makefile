@@ -18,7 +18,7 @@ bin/simpleping-mac: *.go
 bin/scheduleping-mac: cmd/scheduleping/*.go
 	go build -race -v -o $@ $^
 
-build: bin/simpleping
+build: bin/simpleping bin/scheduleping
 
 buildmac: bin/simpleping-mac bin/scheduleping-mac
 
@@ -42,11 +42,6 @@ test:
 run: build init
 	bin/simpleping
 
-heroku: heroku-simpleping heroku-scheduleping
-
-heroku-simpleping: bin/scheduleping
+heroku: bin/simpleping
 	heroku container:push web
-
-heroku-scheduleping: bin/scheduleping
-	heroku container:push scheduleping
 

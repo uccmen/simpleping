@@ -1,2 +1,2 @@
 web: bin/simpleping
-scheduleping: cmd/scheduleping
+scheduleping: bin/scheduleping
