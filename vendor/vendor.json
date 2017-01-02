@@ -31,6 +31,22 @@
 			"path": "github.com/uccmen/redisutil",
 			"revision": "ec77967507f3ade813b17c7e0872712af33319db",
 			"revisionTime": "2016-12-31T07:38:12Z"
+		},
+		{
+			"checksumSHA1": "8Hmo0jAjYcNb9sk4O1c/rSAqh38=",
+			"path": "github.com/uccmen/simpleping",
+			"revision": "92a7838454aef2ee0e8dc10d3f1fb8dfb4ee0e4a",
+			"revisionTime": "2017-01-02T03:43:43Z"
+		},
+		{
+			"checksumSHA1": "TFsg54SR68qpMlAbp6ZoaUU00qs=",
+			"path": "github.com/uccmen/simpleping/cmd/scheduleping",
+			"revision": "92a7838454aef2ee0e8dc10d3f1fb8dfb4ee0e4a",
+			"revisionTime": "2017-01-02T03:43:43Z"
+		},
+		{
+			"path": "github.com/uccmen/simpleping/scheduleping",
+			"revision": ""
 		}
 	],
 	"rootPath": "github.com/uccmen/simpleping"
