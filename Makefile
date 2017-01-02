@@ -9,12 +9,18 @@ deps:
 bin/simpleping: *.go
 	$(GO_BUILD_ENV) go build -race -v -o $@ $^
 
+bin/scheduleping: cmd/scheduleping/*.go
+	$(GO_BUILD_ENV) go build -race -v -o $@ $^
+
 bin/simpleping-mac: *.go
+	go build -race -v -o $@ $^
+
+bin/scheduleping-mac: cmd/scheduleping/*.go
 	go build -race -v -o $@ $^
 
 build: bin/simpleping
 
-buildmac: bin/simpleping-mac
+buildmac: bin/simpleping-mac bin/scheduleping-mac
 
 lint: *.go
 	golint
@@ -36,6 +42,6 @@ test:
 run: build init
 	bin/simpleping
 
-heroku: bin/simpleping
+heroku: bin/simpleping bin/scheduleping
 	heroku container:push web
 
