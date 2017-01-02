@@ -2,6 +2,7 @@
 	"comment": "",
 	"heroku": {
 		"install": [
+			"."
 			"./cmd/..."
 		]
 	},
