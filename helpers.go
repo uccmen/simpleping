@@ -1,6 +1,13 @@
 package main
 
-import "math/big"
+import (
+	"math/big"
+
+	"github.com/uccmen/redisutil"
+)
+
+var Subcribers []string
+var RedisInstance *redisutil.RedisInstance
 
 // IncomingMessage represents incoming message sent by user on Messenger
 type IncomingMessage struct {

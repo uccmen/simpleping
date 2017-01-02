@@ -5,10 +5,11 @@ import (
 	"os"
 
 	"github.com/stvp/rollbar"
+	sp "github.com/uccmen/simpleping"
 )
 
 func addSubscriber(subscriberID string) error {
-	conn := redisInstance.DB().Get()
+	conn := sp.RedisInstance.DB().Get()
 	defer conn.Close()
 	_, err := conn.Do("SADD", "subscribers", subscriberID)
 	if err != nil {
@@ -19,7 +20,7 @@ func addSubscriber(subscriberID string) error {
 }
 
 func getSubscribers() ([]string, error) {
-	conn := redisInstance.DB().Get()
+	conn := sp.RedisInstance.DB().Get()
 	defer conn.Close()
 	res, err := conn.Do("SMEMBERS", "subscribers")
 	if err != nil {
@@ -28,7 +29,7 @@ func getSubscribers() ([]string, error) {
 	}
 	rawData := res.([]interface{})
 	for _, rawSubscriber := range rawData {
-		subcribers = append(subcribers, string(rawSubscriber.([]byte)))
+		sp.Subcribers = append(sp.Subcribers, string(rawSubscriber.([]byte)))
 	}
 
 	return subcribers, nil

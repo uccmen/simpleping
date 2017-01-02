@@ -5,6 +5,7 @@ import (
 	"net/http"
 
 	"github.com/stvp/rollbar"
+	sp "github.com/uccmen/simpleping"
 )
 
 func PingURL(url string) {
@@ -14,7 +15,7 @@ func PingURL(url string) {
 		return
 	}
 
-	for _, subscriber := range subcribers {
+	for _, subscriber := range sp.Subcribers {
 		message := Message{}
 		message.Sender.ID = subscriber
 
@@ -34,7 +35,7 @@ func DailyUpdatePing(url string) {
 		return
 	}
 
-	for _, subscriber := range subcribers {
+	for _, subscriber := range sp.Subcribers {
 		message := Message{}
 		message.Sender.ID = subscriber
 
