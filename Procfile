@@ -1,2 +1,2 @@
 web: bin/simpleping
-scheduler: bin/simpleping scheduleping
+scheduleping: bin/simpleping scheduleping
